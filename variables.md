@@ -173,7 +173,7 @@ PI = PI + 10; // Error: Assignment to constant variable
 ```js
 const PI = 3.14159265359;
 ```
-### JavaScript const variables must be assigned a value when they are declared.
+*** JavaScript const variables must be assigned a value when they are declared.***
 
 ## When to use const?
 ### Always declare a variable with const when you know that the value should not be changed. Use const for:
