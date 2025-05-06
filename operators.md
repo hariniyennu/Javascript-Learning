@@ -19,7 +19,7 @@ Arithmetic Operators are used to perform arithmetic on numbers:
 
 ```js
 let a = 3;
-let x = (100 + 50) * a;
+let x = (100 + 50) * a; //450.
 ```
 
 | Operator | Description               |
@@ -39,7 +39,7 @@ Assignment operators assign values to JavaScript variables:
 
 ```js
 let x = 10;
-x += 5;
+x += 5; //15
 ```
 
 | Operator | Example   | Same As     |
@@ -73,7 +73,7 @@ All the comparison operators above can also be used on strings:
 ```js
 let text1 = "A";
 let text2 = "B";
-let result = text1 < text2;
+let result = text1 < text2; //result=true
 ```
 ***Note that strings are compared alphabetically***
 
@@ -84,7 +84,7 @@ The + can also be used to add (concatenate) strings:
 ```js
 let text1 = "John";
 let text2 = "Doe";
-let text3 = text1 + " " + text2;
+let text3 = text1 + " " + text2; // John Doe
 ```
 
 The += assignment operator can also be used to add (concatenate) strings:
@@ -93,8 +93,7 @@ The += assignment operator can also be used to add (concatenate) strings:
 let text1 = "What a very ";
 text1 += "nice day";
 ```
-The result of `text1` will be:  
-**What a very nice day**
+The result of `text1` will be:  **What a very nice day**
 
 ***Note
 When used on strings, the + operator is called the concatenation operator.***
@@ -147,3 +146,19 @@ Any numeric operand in the operation is converted into a 32 bit number. The resu
 | >>       | Right Shift           | 5 >> 1     | 0101 >> 1 | 0010   | 2       |
 | >>>      | Unsigned Right Shift  | 5 >>> 1    | 0101 >>> 1| 0010   | 2       |
 
+## 8. Ternary Operators
+
+The ternary operator is a shorthand for an if...else statement and is used to evaluate a condition and return one of two values based on the result of the condition.
+
+```js
+condition ? expr1 : expr2;
+```
+- condition: A boolean expression that is evaluated.
+- expr1: The value returned if the condition is true.
+- expr2: The value returned if the condition is false.
+
+```js
+let age = 20;
+let result = (age >= 18) ? "Adult" : "Minor";
+console.log(result); // Output: "Adult"
+```
