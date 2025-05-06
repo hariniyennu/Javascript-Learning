@@ -79,6 +79,7 @@ console.log(z);
  ### A variable declared without a value will have the value undefined.
 
  ---
+ 
  ## 📌 Re-declaring Variables
  ### You cannot re-declare a variable declared with let or const.
  ```js
@@ -130,6 +131,7 @@ var x = 0; // No error
 ```
  ---
 
+
  # 📌 Difference Between var, let, and const
 
 |          | Scope    | Redeclare | Reassign | Hoisted | Binds this |
@@ -137,6 +139,7 @@ var x = 0; // No error
 | **var**  | Function | Yes       | Yes      | Yes     | Yes        |
 | **let**  | Block    | No        | No       | Yes     | No         |
 | **const**| Block    | No        | No       | No      | No         |
+
 
 ---
 
@@ -148,14 +151,17 @@ var x = 0; // No error
 - `let` and `const` do not bind to `this`.
 - `let` and `const` are not hoisted.
 
+
 ❌ **What is Not Good?**
 - `var` does not have to be declared.
 - `var` is hoisted.
 - `var` binds to `this`.
 - The `let` and `const` keywords are not supported in Internet Explorer 11 or earlier.
 
+
 📌 **const Keyword**
 - Variables defined with `const` cannot be redeclared or reassigned.
+
 
 ### Example (Invalid):
 ```js
