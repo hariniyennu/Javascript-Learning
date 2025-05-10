@@ -159,6 +159,7 @@ console.log(person1.getFullName()); // Output: John Doe
 JavaScript objects inherit features from their prototype.
 
 Prototypal inheritance allows objects to inherit properties and methods from other objects.
+
 ```js
 const car = {
   type: "Sedan",
@@ -173,9 +174,11 @@ console.log(myCar.type); // Output: Sedan
 myCar.start(); // Output: Car started
 ```
 - Prototype Chain
+
 When accessing a property, JavaScript looks for it in the object itself first.
 
 If not found, it continues up the prototype chain until it finds the property or reaches the end of the chain (null).
+
 ```js
 const animal = {
   eats: true
@@ -189,7 +192,9 @@ console.log(rabbit.jumps); // Output: true
 ```
 
 - Adding Properties and Methods to Prototypes
+  
 You can add new properties or methods to a constructor's prototype even after objects are created:
+
 ```js
 function User(name) {
   this.name = name;
@@ -207,6 +212,7 @@ user1.sayHello(); // Output: Hello, my name is Alice
 user2.sayHello(); // Output: Hello, my name is Bob
 ```
 - Modifying Built-in Prototypes (Not Recommended)
+
 Although it's possible to modify built-in prototypes like Array, String, or Object, it's not recommended because it can lead to unexpected behavior.
 
 Example (Not Recommended):
@@ -219,6 +225,7 @@ const arr = [1, 2, 3];
 console.log(arr.last()); // Output: 3
 ```
 - Using hasOwnProperty()
+  
 The hasOwnProperty() method checks if a property exists directly on the object (not in its prototype chain).
 
 ```js
@@ -228,6 +235,7 @@ console.log(obj.hasOwnProperty('name')); // true
 console.log(obj.hasOwnProperty('toString')); // false, inherited from prototype
 ```
 - Prototype vs. __proto__
+  
 prototype is a property of constructor functions.
 
 __proto__ is an internal property that points to the prototype of the object.
@@ -244,13 +252,17 @@ console.log(Animal.prototype.constructor === Animal); // true
 ```
 # Object Cloning and Iteration
 - Object Cloning
+  
 Cloning an object means creating a new object that has the same properties as the original object. In JavaScript, we can achieve this using various methods.
 
 - Shallow Copy
+  
 A shallow copy only copies the top-level properties. Nested objects or arrays will still reference the original objects.
 
 Methods for Cloning
+
 1. Using Object.assign() : Creates a shallow copy of the object.
+
 ```js
    const person = { name: 'John', age: 30 };
   const clone = Object.assign({}, person);
@@ -258,7 +270,9 @@ Methods for Cloning
   console.log(clone); // { name: 'John', age: 30 }
   console.log(clone === person); // false (new object)
 ```
+
 2. Using Spread Syntax (...) : Another way to create a shallow copy of an object.
+   
 ```js
 const person = { name: 'John', age: 30 };
 const clone = { ...person };
@@ -266,7 +280,9 @@ const clone = { ...person };
 console.log(clone); // { name: 'John', age: 30 }
 console.log(clone === person); // false (new object)
 ```
+
 3. Using JSON.parse() and JSON.stringify() : This creates a deep copy, where both nested objects and arrays are cloned. However, it does not work with functions, undefined, or symbols.
+   
 ```js
 const person = { name: 'John', age: 30, address: { city: 'New York' } };
 const deepClone = JSON.parse(JSON.stringify(person));
