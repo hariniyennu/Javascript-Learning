@@ -43,19 +43,16 @@ person.eyeColor = "blue";
 ```
 3. Using Constructor Functions
 ```js
-// Create an Object
-const person = new Object();
-// Add Properties
-person.firstName = "John";
-person.lastName = "Doe";
-person.age = 50;
-person.eyeColor = "blue";
+function Person(first, last, age, eyeColor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyeColor;
+}
 ```
 ```js
 const myFather = new Person("John", "Doe", 50, "blue");
 const myMother = new Person("Sally", "Rally", 48, "green");
-const mySister = new Person("Anna", "Rally", 18, "green");
-const mySelf = new Person("Johnny", "Rally", 22, "green");
 ```
 ## Object Iteration 
 
