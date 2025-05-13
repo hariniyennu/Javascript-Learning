@@ -1,7 +1,7 @@
 # 🌟 JavaScript DOM (Document Object Model) 
 The Document Object Model (DOM) is a programming interface that represents an HTML or XML document as a structured tree of objects. It allows JavaScript to manipulate, access, and modify both the structure and the content of a webpage.
 
-## 1️⃣ Understanding the DOM Tree Structure
+## Understanding the DOM Tree Structure
 When the browser loads a webpage, it creates a DOM tree that represents the HTML document. The structure looks like this:
 
 ```js
@@ -35,7 +35,7 @@ Document
 - Text Nodes: Represents the text inside HTML elements.
 - Attribute Nodes: Represents the attributes of HTML elements (like id, class).
 
-## 2️⃣ Accessing HTML Elements
+## Accessing HTML Elements
 ### 📌 2.1 By ID
 ```js
 <h1 id="header">Hello, DOM!</h1>
@@ -78,7 +78,64 @@ console.log(textElement.innerHTML); // Output: Selector Example
 
 **querySelectorAll** selects all matches and returns a NodeList.
 
-## 3️⃣ Modifying HTML Elements
+## DOM Document
+The document object is the root of the DOM and gives you access to the whole page.
+
+It represents your HTML document and provides methods to interact with the content.
+### 📌 Common Properties:
+
+| Property        | Description                          |
+|------------------|-------------------------------------|
+| **document.title** | Gets or sets the title of the page. |
+| **document.body**  | Accesses the `<body>` element.     |
+| **document.URL**   | Gets the current URL of the page.  |
+| **document.head**  | Accesses the `<head>` section.     |
+
+```js
+console.log(document.title);       // Logs the title of the document
+console.log(document.URL);         // Logs the URL of the page
+console.log(document.body.innerHTML); // Logs the inner HTML of the body
+```
+
+## DOM CSS
+The DOM CSS allows you to manipulate the styling of HTML elements using JavaScript.
+You can use the .style property to change CSS properties directly.
+
+### 📝 Common CSS Properties in DOM:
+
+| **Property**             | **Description**                              |
+|---------------------------|---------------------------------------------|
+| `style.backgroundColor`  | Changes the background color.               |
+| `style.color`            | Changes the text color.                     |
+| `style.fontSize`         | Changes the font size.                      |
+| `style.margin`           | Changes the margin space.                   |
+| `style.display`          | Toggles visibility (e.g., `none`, `block`). |
+
+```js
+<p id="text">Hello, DOM CSS!</p>
+<button onclick="changeStyle()">Change Style</button>
+```
+```js
+function changeStyle() {
+  const text = document.getElementById("text");
+  text.style.color = "white";
+  text.style.backgroundColor = "black";
+  text.style.fontSize = "24px";
+  text.style.padding = "10px";
+}
+```
+Explanation:
+When the button is clicked, the paragraph's style is modified:
+
+Text color becomes white
+
+Background color becomes black
+
+Font size increases
+
+Padding is added
+
+## Modifying HTML Elements
 ### 📌 3.1 Change Content
 ```js
 <p id="description">Old Content</p>
@@ -110,7 +167,7 @@ text.style.fontSize = "20px";
 Before: Default text
 After: Text turns red with a font size of 20px.
 
-## 4️⃣ Creating and Removing Elements
+## Creating and Removing Elements
 ### 📌 4.1 Create a New Element
 ```js
 const newParagraph = document.createElement("p");
@@ -129,7 +186,7 @@ element.remove();
 ```
 👉 Result: The <div> with the text "Remove Me!" is deleted from the DOM.
 
-## 5️⃣ Handling Events
+## Handling Events
 Events are things that happen in the browser — clicking, scrolling, typing, etc. You can use JavaScript to listen and respond to these events.
 ### 📌 5.1 Event Listener Example
 ```js
@@ -152,7 +209,7 @@ button.addEventListener("click", () => {
 | **keydown**  | When a key is pressed               |
 | **submit**   | When a form is submitted            |
 
-## 6️⃣ Traversing the DOM
+## Traversing the DOM
 You can navigate the DOM tree using properties:
 
 - .parentElement → Get the parent element.
@@ -174,3 +231,85 @@ const middleItem = document.getElementById("middle-item");
 console.log(middleItem.nextElementSibling.innerHTML); // Output: Item 3
 ```
 
+## DOM Animations
+📝 Common Techniques:
+Using setInterval() to update position or style.
+
+Using requestAnimationFrame() for smoother animations.
+
+```js
+<div id="box" style="width:50px; height:50px; background:red; position:absolute;"></div>
+<button onclick="startAnimation()">Move Right</button>
+```
+```js
+function startAnimation() {
+  const box = document.getElementById("box");
+  let position = 0;
+  const id = setInterval(frame, 5);
+
+  function frame() {
+    if (position == 350) {
+      clearInterval(id);
+    } else {
+      position++;
+      box.style.left = position + 'px';
+    }
+  }
+}
+```
+Explanation:
+
+A red box moves from left to right when the button is clicked.
+
+setInterval() is used to update its position every 5ms.
+
+## DOM Nodes
+In the DOM, everything is a node:
+- The entire document is a document node.
+- Each HTML element is an element node.
+- Text inside elements is a text node.
+
+```js
+<p id="demo">Hello, Node!</p>
+```
+```js
+const node = document.getElementById("demo");
+console.log(node.nodeType); // Output: 1 (Element Node)
+```
+Explanation:
+
+Node Type 1 represents an Element Node.
+
+Node Type 3 represents a Text Node.
+
+## DOM Collections
+Collections are array-like objects that hold a list of elements.
+
+They are live, meaning they automatically update when the DOM changes.
+
+```js
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<div class="item">Item 3</div>
+```
+```js
+const items = document.getElementsByClassName("item");
+console.log(items.length); // Output: 3
+```
+Explanation:
+
+getElementsByClassName() fetches all elements with the class .item.
+
+It's not an array, but it can be looped through.
+
+##  DOM Node Lists
+Node Lists are collections of document nodes.
+
+They can be static or live based on how they're fetched.
+
+### 📝 Difference Between NodeList and HTMLCollection:
+
+| **Feature**         | **NodeList**         | **HTMLCollection**          |
+|----------------------|-----------------------|-----------------------------|
+| **Live Update**     | ❌ (Static)           | ✅ (Live)                   |
+| **Access Method**   | `querySelectorAll`   | `getElementsByTagName`      |
