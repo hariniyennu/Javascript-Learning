@@ -177,11 +177,13 @@ It uses XPath to navigate and manipulate the XML tree.
 ##  XML Processors
 - An XML processor is responsible for parsing XML documents.
 - It checks for:
+
   Well-Formed XML: Ensures tags are properly nested and closed.
 
   Validity: Ensures it follows the structure defined by DTD or XML Schema.
 
 - Two types:
+  
   Validating Processor: Ensures XML follows DTD or Schema.
 
   Non-Validating Processor: Only checks if XML is well-formed.
