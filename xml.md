@@ -55,7 +55,7 @@ Internal DTD Example:
 ]>
 <note>
   <to>Harini</to>
-  <from>ChatGPT</from>
+  <from>XYZ</from>
   <heading>Reminder</heading>
   <body>Practice JavaScript daily!</body>
 </note>
