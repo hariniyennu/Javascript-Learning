@@ -56,7 +56,7 @@
 Converts a JSON string into a JavaScript object.
 
 Method: JSON.parse()
-```json
+```js
 const jsonString = '{"name": "John", "age": 30}';
 const obj = JSON.parse(jsonString);
 
@@ -67,7 +67,7 @@ console.log(obj.age);  // 30
 Converts a JavaScript object into a JSON string.
 
 Method: JSON.stringify()
-```json
+```js
 const person = {
   name: "John",
   age: 30,
